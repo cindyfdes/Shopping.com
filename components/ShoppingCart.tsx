@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
-import { cartActionTypes, cartContext } from "../context/cartContext";
+import { cartActionTypes, cartContext } from "../context/CartContext";
 import { Product } from "../types/product";
 import { Action } from "../types/cartItems";
 
