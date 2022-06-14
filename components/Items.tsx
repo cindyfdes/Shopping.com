@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
-import { cartContext, cartActionTypes } from "../context/cartContext";
+import { cartContext, cartActionTypes } from "../context/CartContext";
 import { Cart } from "../types/cart";
-import { Action } from "../types/cartItems";
 import { Product } from "../types/product";
 import { truncate } from "../utilities/common";
 interface IProps {

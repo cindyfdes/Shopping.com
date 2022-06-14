@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import styles from "../styles/Home.module.css";
 import { getproducts } from "../utilities/getProducts";
 import { Product } from "../types/product";
-import { CartProvider } from "../context/cartContext";
+import { CartProvider } from "../context/CartContext";
 import Filter from "../components/Filter";
 import { ItemsList } from "../components/Home";
 
