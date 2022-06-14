@@ -5,8 +5,9 @@ import Header from "../components/Header";
 import styles from "../styles/Home.module.css";
 import { getproducts } from "../utilities/getProducts";
 import { Product } from "../types/product";
-import ItemsList from "../components/ItemsList";
-import { CartProvider } from "../context/CartContext";
+import { CartProvider } from "../context/cartContext";
+import Filter from "../components/Filter";
+import { ItemsList } from "../components/Home";
 
 interface IProps {
   products: Product[];
@@ -23,7 +24,8 @@ const Home = ({ products }: IProps) => {
       <main>
         <CartProvider>
           <Header />
-          <ItemsList products={products} />
+          <Filter products={products} />
+          {/* <ItemsList products={products} /> */}
         </CartProvider>
       </main>
 

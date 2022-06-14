@@ -1,19 +1,31 @@
 import { Product } from "../types/product";
 import { faker } from "@faker-js/faker";
 export const getproducts = async () => {
-  const result: Product[] = [...Array(20)].map(() => {
+  const products: {
+    id: number;
+    title: string;
+    price: string;
+    category: string;
+    description: string;
+    image: string;
+  }[] = await fetch("https://fakestoreapi.com/products").then((res) =>
+    res.json()
+  );
+  const result: Product[] = products.map((prod) => {
     const product: Product = {
       id: faker.datatype.uuid(),
-      title: faker.commerce.productName(),
-      description: faker.commerce.productDescription(),
-      category: faker.commerce.department(),
-      image: faker.image.abstract(640, 480, true),
-      price: faker.commerce.price(),
+      title: prod.title,
+      description: prod.description,
+      category: prod.category,
+      image: prod.image,
+      price: prod.price,
       quantity: parseInt(
         faker.random.numeric(1, { bannedDigits: ["0,3,5,8,9"] })
       ),
+      color: faker.color.human(),
     };
     return product;
   });
+  console.log("result", result);
   return result;
 };
